@@ -220,7 +220,7 @@ class GrayscaleStatistics(MetamerStatistics):
         # Classes of statistics to include (or not if set to false)
         self.stat_mean = True                         # We use mean of base image, but this also controls mean of the low-pass images
         self.stat_base_variance = True
-        self.stat_base_skewkurtosis = True
+        self.stat_base_skewkurtosis = False
 #        self.stat_high_variance = True
         self.stat_bandpass_variance = True            # Generalization of old high_variance statistic    
 #        self.stat_high_variance_to_zero = False       # Not actually a statistic, but option to try to force high-pass to zero in metamer
