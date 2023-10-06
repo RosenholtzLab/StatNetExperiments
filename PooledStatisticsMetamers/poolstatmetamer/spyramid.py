@@ -57,6 +57,7 @@ import collections.abc
 import spyramid_filters as spf
 from fft_utils import fftshift2d,ifftshift2d,freq_downsample2d, rfft_shim2d, irfft_shim2d, ifft_shim2d
 from image_utils import plot_image
+from collections.abc import Mapping
 
 # This class specifies the parameters for a steerable pyramid such as which
 # types of images to generate and at which levels in the pyramid
@@ -222,7 +223,7 @@ class SPyramidParams():
         if isinstance(a,collections.abc.Sequence):   # convert elements in list/tuple if needed
             for i in range(len(a)):
                 if isinstance(a[i],str): a[i] = cls.from_str(a[i])
-        if isinstance(a,collections.Mapping):        # convert values in a dictionary if needed
+        if isinstance(a,collections.abc.Mapping):        # convert values in a dictionary if needed
             for key in a.keys():
                 if isinstance(a[key],str): a[key] = cls.from_str(a[key])
         
